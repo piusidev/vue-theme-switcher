@@ -1,4 +1,6 @@
-# vue-theme-switcher
+# Theme Switcher with Vue
+
+Project for improve my VueJS skills and learn a little bit more about theme changes in this framework.
 
 ## Project setup
 ```
@@ -19,6 +21,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
