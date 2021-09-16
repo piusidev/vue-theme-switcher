@@ -1,6 +1,7 @@
 <template>
   <div id="app" v-bind:theme="store.state.theme">
-    <div>
+    <div class="hero">
+      <h1>Change Theme!</h1>
       <switcher />
     </div>
   </div>
@@ -24,6 +25,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -48,5 +51,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
 }
 </style>
