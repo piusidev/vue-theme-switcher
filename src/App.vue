@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" v-bind:theme="store.state.theme">
+    <div>
+      <switcher />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Switcher from './components/Switcher.vue'
+import store from './store'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Switcher
+  },
+  data: () => {
+    return {
+      store
+    }
   }
 }
 </script>
 
 <style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app[theme="dark"] {
+  --background: #282a36;
+  --text: #f8f8f2;
+}
+
+#app[theme="light"] {
+  --background: #f8f8f2;
+  --text: #282a36;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: var(--background);
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
