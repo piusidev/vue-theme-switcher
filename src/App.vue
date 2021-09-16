@@ -51,6 +51,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .hero {
