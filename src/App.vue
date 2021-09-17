@@ -1,26 +1,24 @@
 <template>
-  <div id="app" v-bind:theme="store.state.theme">
-    <div class="hero">
-      <h1>Change Theme!</h1>
-      <switcher />
-    </div>
+  <div id="app">
+    <theme-provider>
+      <div class="hero">
+        <h1>Change Theme!</h1>
+        <switcher />
+      </div>
+    </theme-provider>
   </div>
 </template>
 
 <script>
-import Switcher from './components/Switcher.vue'
-import store from './store'
+import Switcher from './theme/Switcher.vue'
+import ThemeProvider from './theme/ThemeProvider.vue'
 
 export default {
   name: 'App',
   components: {
+    ThemeProvider,
     Switcher
   },
-  data: () => {
-    return {
-      store
-    }
-  }
 }
 </script>
 
@@ -33,33 +31,17 @@ export default {
   box-sizing: border-box;
 }
 
-#app[theme="dark"] {
-  --background: #282a36;
-  --text: #f8f8f2;
-}
-
-#app[theme="light"] {
-  --background: #f8f8f2;
-  --text: #282a36;
-}
-
-#app {
+.hero {
   background-color: var(--background);
   height: 100vh;
   width: 100vw;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   transition: all 0.3s ease-in-out;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero h1 {

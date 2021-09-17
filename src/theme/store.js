@@ -1,5 +1,4 @@
 const store = {
-  debug: true,
   state: {
     theme: 'dark'
   },
